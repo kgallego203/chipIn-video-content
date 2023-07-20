@@ -1,6 +1,7 @@
 import 'package:chipin_video_content/features/authentication/services/auth_service.dart';
 import 'package:chipin_video_content/features/events/models/event_model.dart';
 import 'package:chipin_video_content/features/events/services/event_service.dart';
+import 'package:chipin_video_content/themes/palette.dart';
 import 'package:flutter/material.dart';
 
 class EventCreationScreen extends StatefulWidget {
@@ -73,7 +74,11 @@ class _EventCreationScreenState extends State<EventCreationScreen> {
       if (success) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Event created successfully!'),
+            content: Text(
+              'Event created successfully!',
+              style: TextStyle(color: Palette.success100),
+            ),
+            backgroundColor: Palette.success10,
           ),
         );
 
@@ -89,7 +94,11 @@ class _EventCreationScreenState extends State<EventCreationScreen> {
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Failed to create event.'),
+            content: Text(
+              'Failed to create event.',
+              style: TextStyle(color: Palette.warning100),
+            ),
+            backgroundColor: Palette.warning10,
           ),
         );
       }
@@ -100,7 +109,10 @@ class _EventCreationScreenState extends State<EventCreationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Create Event'),
+        title: const Text(
+          'Create Event',
+          style: TextStyle(color: Palette.neutral0),
+        ),
       ),
       body: Form(
         key: _formKey,
@@ -110,47 +122,92 @@ class _EventCreationScreenState extends State<EventCreationScreen> {
             TextFormField(
               decoration: const InputDecoration(
                 labelText: 'Title',
+                labelStyle: TextStyle(color: Palette.neutral70),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Palette.primary100),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Palette.neutral50),
+                ),
               ),
               validator: (value) =>
                   value!.isEmpty ? 'Please enter a title' : null,
               onSaved: (value) => _title = value!,
             ),
+            const SizedBox(height: 16.0),
             TextFormField(
               decoration: const InputDecoration(
                 labelText: 'Location',
+                labelStyle: TextStyle(color: Palette.neutral70),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Palette.primary100),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Palette.neutral50),
+                ),
               ),
               validator: (value) =>
                   value!.isEmpty ? 'Please enter a location' : null,
               onSaved: (value) => _location = value!,
             ),
+            const SizedBox(height: 16.0),
             TextFormField(
               decoration: const InputDecoration(
                 labelText: 'Description',
+                labelStyle: TextStyle(color: Palette.neutral70),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Palette.primary100),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Palette.neutral50),
+                ),
               ),
               validator: (value) =>
                   value!.isEmpty ? 'Please enter a title' : null,
               onSaved: (value) => _description = value!,
             ),
+            const SizedBox(height: 16.0),
             ListTile(
-              leading: const Icon(Icons.calendar_today),
-              title: const Text('Date'),
+              leading: const Icon(
+                Icons.calendar_today,
+                color: Palette.neutral70,
+              ),
+              title: const Text(
+                'Date',
+                style: TextStyle(color: Palette.neutral70),
+              ),
               subtitle: Text(
                 '${_date.year}-${_date.month}-${_date.day}',
+                style: const TextStyle(color: Palette.neutral100),
               ),
               onTap: _selectDate,
             ),
+            const SizedBox(height: 16.0),
             ListTile(
-              leading: const Icon(Icons.access_time),
-              title: const Text('Time'),
+              leading: const Icon(
+                Icons.access_time,
+                color: Palette.neutral70,
+              ),
+              title: const Text(
+                'Time',
+                style: TextStyle(color: Palette.neutral100),
+              ),
               subtitle: Text(
                 _time.format(context),
+                style: const TextStyle(color: Palette.neutral100),
               ),
               onTap: _selectTime,
             ),
             const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _submit,
-              child: const Text('Create Event'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Palette.primary100,
+              ),
+              child: const Text(
+                'Create Event',
+                style: TextStyle(color: Palette.neutral0),
+              ),
             ),
           ],
         ),
