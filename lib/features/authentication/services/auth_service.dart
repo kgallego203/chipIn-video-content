@@ -1,4 +1,5 @@
 import 'package:appwrite/appwrite.dart';
+import 'package:appwrite/models.dart';
 import 'package:chipin_video_content/appwrite/appwrite_service.dart';
 import 'package:flutter/material.dart';
 
@@ -46,6 +47,28 @@ class AuthService {
       print('Logged out successfully');
     } catch (e) {
       print('Failed to logout: $e');
+      throw e;
+    }
+  }
+
+  // * Method to get the name of the currently logged in user
+  static Future<String> getUserName() async {
+    try {
+      User response = await account.get();
+      return response.name;
+    } catch (e) {
+      print('Failed to get user name: $e');
+      throw e;
+    }
+  }
+
+  // * Method to get the currently logged in user's ID
+  static Future<String> getCreatorId() async {
+    try {
+      User response = await account.get();
+      return response.$id;
+    } catch (e) {
+      print('Failed to get user ID: $e');
       throw e;
     }
   }

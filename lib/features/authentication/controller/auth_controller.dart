@@ -25,7 +25,7 @@ class LoginController {
     } catch (error) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Logged in successfully'),
+          content: Text('Login failed!'),
         ),
       );
     }
