@@ -1,5 +1,6 @@
 import 'package:chipin_video_content/features/authentication/views/login_view.dart';
 import 'package:chipin_video_content/features/authentication/views/signup_view.dart';
+import 'package:chipin_video_content/themes/palette.dart';
 import 'package:flutter/material.dart';
 
 class AuthMainView extends StatefulWidget {
@@ -27,13 +28,56 @@ class _AuthMainViewState extends State<AuthMainView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'chipIn',
-          style: TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-          ),
+        title: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              'chipIn',
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: Palette.primary100,
+              ),
+            ),
+            Row(
+              children: [
+                Text(
+                  'powered by ',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Palette.neutral70,
+                  ),
+                ),
+                Text(
+                  'Flutter',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontStyle: FontStyle.italic,
+                    color: Color(0xFF02569B),
+                  ),
+                ),
+                Text(
+                  ' and ',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Palette.neutral70,
+                  ),
+                ),
+                Text(
+                  'Appwrite',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontStyle: FontStyle.italic,
+                    color: Palette.primary300,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
+        backgroundColor: Palette.neutral10,
+        toolbarHeight: 100,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -50,6 +94,8 @@ class _AuthMainViewState extends State<AuthMainView> {
           ),
         ],
         currentIndex: _selectedIndex,
+        selectedItemColor: Palette.primary100,
+        unselectedItemColor: Palette.neutral70,
         onTap: _onItemTapped,
       ),
     );
