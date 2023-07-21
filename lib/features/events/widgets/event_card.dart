@@ -85,6 +85,10 @@ class EventCard extends StatelessWidget {
                               color: Colors.white,
                               fontSize: 16,
                             ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            minimumSize: const Size(100, 48),
                           ),
                           child: const Text('Join'),
                         ),
@@ -153,11 +157,13 @@ class EventCard extends StatelessWidget {
                         size: 16.0,
                       ),
                       const SizedBox(width: 4.0),
-                      Text(
-                        event.description,
-                        style: const TextStyle(
-                          color: Colors.black87,
-                          fontSize: 15.0,
+                      Flexible(
+                        child: Text(
+                          event.description,
+                          style: const TextStyle(
+                            color: Colors.black87,
+                            fontSize: 15.0,
+                          ),
                         ),
                       ),
                     ],

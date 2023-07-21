@@ -67,7 +67,7 @@ class SignUpView extends StatelessWidget {
                     controller: signUpController.firstNameController,
                     decoration: InputDecoration(
                       hintText: 'First Name',
-                      fillColor: Palette.neutral0,
+                      fillColor: Palette.neutral10,
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
@@ -86,7 +86,7 @@ class SignUpView extends StatelessWidget {
                     controller: signUpController.lastNameController,
                     decoration: InputDecoration(
                       hintText: 'Last Name',
-                      fillColor: Palette.neutral0,
+                      fillColor: Palette.neutral10,
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
@@ -105,7 +105,7 @@ class SignUpView extends StatelessWidget {
                     controller: signUpController.emailController,
                     decoration: InputDecoration(
                       hintText: 'Email',
-                      fillColor: Palette.neutral0,
+                      fillColor: Palette.neutral10,
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
@@ -128,7 +128,7 @@ class SignUpView extends StatelessWidget {
                     controller: signUpController.usernameController,
                     decoration: InputDecoration(
                       hintText: 'Username',
-                      fillColor: Palette.neutral0,
+                      fillColor: Palette.neutral10,
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
@@ -147,7 +147,7 @@ class SignUpView extends StatelessWidget {
                     controller: signUpController.passwordController,
                     decoration: InputDecoration(
                       hintText: 'Password',
-                      fillColor: Palette.neutral0,
+                      fillColor: Palette.neutral10,
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
@@ -167,7 +167,7 @@ class SignUpView extends StatelessWidget {
                     controller: signUpController.confirmPasswordController,
                     decoration: InputDecoration(
                       hintText: 'Confirm Password',
-                      fillColor: Palette.neutral0,
+                      fillColor: Palette.neutral10,
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),

@@ -63,7 +63,7 @@ class LoginView extends StatelessWidget {
               controller: loginController.emailController,
               decoration: InputDecoration(
                   hintText: 'Email',
-                  fillColor: Palette.neutral0,
+                  fillColor: Palette.neutral10,
                   filled: true,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
@@ -82,7 +82,7 @@ class LoginView extends StatelessWidget {
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Password',
-                fillColor: Palette.neutral0,
+                fillColor: Palette.neutral10,
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),

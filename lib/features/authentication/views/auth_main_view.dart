@@ -76,7 +76,7 @@ class _AuthMainViewState extends State<AuthMainView> {
             ),
           ],
         ),
-        backgroundColor: Palette.neutral10,
+        backgroundColor: Palette.neutral0,
         toolbarHeight: 100,
       ),
       body: Center(
